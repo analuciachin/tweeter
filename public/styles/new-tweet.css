@@ -1,0 +1,27 @@
+form {
+  width: 800px;
+  margin: 0 auto;
+}
+
+label {
+  display: inline-block;
+  margin-right: 300px;
+}
+
+textarea {
+  display: inline-block;
+  height: 40px;
+  width: 600px;
+  margin: 10px 0;
+  background-color: #f4f1ec;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid;
+  overflow: hidden;
+}
+
+button {
+  margin-right: 480px;
+  margin-top: 15px;
+}
