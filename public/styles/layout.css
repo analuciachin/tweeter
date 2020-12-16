@@ -33,6 +33,6 @@ body {
  }
 
  .flex-item {
-    text-align: center;
+    /* text-align: center; */
     width: 90%;
  }
