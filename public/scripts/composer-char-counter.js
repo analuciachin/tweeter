@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('#tweet-text').on('input', function() {
     const maxLength = 140;
     const currentLength = $(this).val().length;
-    console.log(currentLength);
+    //console.log(currentLength);
     const textLength = maxLength - currentLength;
     
     if (textLength < 0) {

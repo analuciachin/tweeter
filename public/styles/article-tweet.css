@@ -25,7 +25,7 @@ article.tweet header span label {
 }
 
 article.tweet header span:last-of-type {
-  /* display: inline-block; */
+  /* display: none; */
   margin-top: 15px;
 }
 
@@ -78,10 +78,18 @@ article.tweet footer span {
 }
 
 .hide {
-  display: none;
+  opacity: 0;
 }
 
 article.tweet:hover {
   filter: blur(0);
   box-shadow: 10px 10px  #b3b3ff;
 }
+
+article.tweet:hover .hide {
+  opacity: 1;
+}
+
+/* article.tweet header span:last-of-type:hover {
+  display: inline-block;
+} */
