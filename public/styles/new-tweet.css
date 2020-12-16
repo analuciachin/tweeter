@@ -6,10 +6,9 @@
   justify-content: space-around;
 }
 
-/* .new-tweet label {
-  display: inline-block;
-  margin-right: 300px;
-}  */
+.new-tweet h2 {
+  text-align: center;
+}
 
 .new-tweet textarea {
   display: block;
@@ -31,7 +30,6 @@
 }
 
 .new-tweet button {
-  /* margin-right: 470px; */
   margin-top: 15px;
   padding: 3px 5px;
   font-family: 'Bungee', sans-serif;

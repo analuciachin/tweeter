@@ -3,6 +3,7 @@ article.tweet {
   margin: 50px auto 0 auto;
   border: 2px solid;
   height: 250px;
+  filter: blur(1px);
 }
 
 article.tweet header {
@@ -10,7 +11,6 @@ article.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* align-items: center; */
   margin: 20px;
 }
 
@@ -77,7 +77,20 @@ article.tweet footer span {
   font-size: 14px;
 }
 
-.tweet.hover {
-  filter: blur(1px);
-  border: 2px solid #9999e6;
+.hide {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
+
+article.tweet:hover {
+  filter: blur(0);
+  border-right: 6px solid #9999e6;
+  border-bottom: 6px solid #9999e6;
+}
+
+article.tweet header span:last-of-type:hover {
+  overflow: hidden;
 }
