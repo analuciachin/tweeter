@@ -1,9 +1,13 @@
 nav {
   height: 120px;
-  width: 100%;
   background-color: #4056a1;
   color: #fff;
   padding: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:1;
+  /* overflow: hidden; */
 }
 
 span {
