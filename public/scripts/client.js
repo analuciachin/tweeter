@@ -36,6 +36,7 @@ $(document).ready(function() {
 
 
   const loadTweets = function () {
+    console.log('loadTweets func');
     const url = `http://localhost:8080/tweets`;
 
     $.ajax({
@@ -54,12 +55,12 @@ $(document).ready(function() {
       })
   }
 
-  loadTweets();
+  //loadTweets();
 
   const renderTweets = function (tweets) {
     for(const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
-      $('#tweets-container').append(newTweet);
+      $('#tweets-container').prepend(newTweet);
     }    
   }
 
@@ -109,7 +110,6 @@ $(document).ready(function() {
 
   $('#form-new-tweet').on('submit', function(event) {
     
-    //console.log($(this).children('div').find('output').text());
     if (!$('#tweet-text').val()) {
       event.preventDefault();
       alert('Empty tweet.')
@@ -117,29 +117,25 @@ $(document).ready(function() {
       event.preventDefault();
       alert('You reached the maximum numbers of characters.');    
     } else {
-      const content = $(this).serialize();
-      console.log('line 121', $(this).serialize());
+
+      event.preventDefault();
+
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: $(this).serialize(),
+      })
+      .done(function () {
+        loadTweets();
+        $('#tweet-text').val('');
+      })
+      .fail(function () {
+        alert('error');
+      })
+      .always(function () {
+        console.log('complete');
+      })
     }
-    
-    
-
-
-    // const form = $(this);
-    // const url = $(this).attr('action');
-    // $.ajax({
-    //   type: 'POST',
-    //   url: url,
-    //   data: form.serialize(),
-    //   success: function (data) {
-    //     console.log('Submission was successful.');
-    //     console.log(data);
-    //   },
-    //   error: function (data) {
-    //       console.log('An error occurred.');
-    //       console.log(data);
-    //   }
-    
-    // })
   });
 
 });
