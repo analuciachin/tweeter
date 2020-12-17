@@ -8,7 +8,7 @@
 $(document).ready(function() {
   // --- our code goes here ---
 
-const data = [
+  const data = [
     {
       "user": {
         "name": "Newton",
@@ -32,7 +32,7 @@ const data = [
       },
       "created_at": 1461113959088
     }
-]
+  ]
 
 
 
@@ -55,7 +55,6 @@ const data = [
     // Seconds part from the timestamp
     const seconds = date.getSeconds();
 
-    console.log('hours', hours, 'minutes', minutes, 'seconds', seconds);
     if (hours) {
       return hours + ' hours';
     } else if (minutes) {
@@ -84,29 +83,18 @@ const data = [
     $('<li>').addClass('fas fa-retweet').appendTo($ul);
     $('<li>').addClass('fas fa-heart').appendTo($ul);
 
-    console.log($article);
     return $article;
   }
-
-
-
-  // $('article.tweet').hover(function() {
-  //   $(this).children().find('.hide').removeClass('hide');
-  // }, function() {
-  //   $(this).children('header').find('span:last-of-type').addClass('hide');
-  // })
-
-  // $('#tweets-container').hover(function() {
-  //   $(this).children().find('.hide').removeClass('hide');
-  // }, function() {
-  //   $(this).children('article').children('header').find('span:last-of-type').addClass('hide');
-  // })
 
 
   $('#form-new-tweet').on('submit', function(event) {
     event.preventDefault();
     renderTweets(data);
-    console.log($('#tweets-container').find('.hide'))
+    
+    const tweetContent = $('#tweet-text').serialize();
+
+    console.log(tweetContent);
+
   })
 
 });
