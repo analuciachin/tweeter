@@ -112,10 +112,14 @@ $(document).ready(function() {
     
     if (!$('#tweet-text').val()) {
       event.preventDefault();
-      alert('Empty tweet.')
+      const error = 'Empty tweet'
+      $('<span>').addClass('fas fa-exclamation-triangle').text(error).appendTo($('#error-msg'));
+      
     } else if ($(this).children('div').find('output').text() < 0) {
       event.preventDefault();
-      alert('You reached the maximum numbers of characters.');    
+      const error1 = 'You reached the maximum numbers of characters';
+      $('<span>').addClass('fas fa-exclamation-triangle').text(error1).appendTo($('#error-msg'));
+
     } else {
 
       event.preventDefault();
@@ -137,5 +141,13 @@ $(document).ready(function() {
       })
     }
   });
+
+  $("#tweet-text").on('input', function() {
+    //console.log($('.fa-exclamation-triangle').text(''));
+    console.log($('#error-msg').children('span').text())
+    $('#error-msg').children('span').text('');
+    $('#error-msg').children('span').removeClass('fas fa-exclamation-triangle');
+  }); 
+
 
 });

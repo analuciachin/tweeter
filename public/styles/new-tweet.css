@@ -43,4 +43,16 @@
   font-weight: bold;
 }
 
+#error-msg {
+  color: #b30000;
+  display: inline-block;
+  align-content: flex-start;
+}
 
+#error-msg span {
+  margin: 50px;
+}
+
+.fa-exclamation-triangle:before {
+  margin-right: 20px;
+}
