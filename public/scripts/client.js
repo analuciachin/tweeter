@@ -110,7 +110,9 @@ $(document).ready(function() {
 
   $('#form-new-tweet').on('submit', function(event) {
     
-    if (!$('#tweet-text').val()) {
+    if ($('#error-msg').children('span').text()) {
+      event.preventDefault();
+    } else if (!$('#tweet-text').val()) {
       event.preventDefault();
       const error = 'Empty tweet'
       $('<span>').addClass('fas fa-exclamation-triangle').text(error).appendTo($('#error-msg'));
