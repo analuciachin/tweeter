@@ -23,6 +23,13 @@ span {
   float: right;
 }
 
+.wrapper button {
+  border: none;
+  background-color: #ff9933;
+  color: #fff;
+  cursor: pointer;
+}
+
 .wrapper span {
   font-family: 'Source Sans Pro', sans-serif;
 }

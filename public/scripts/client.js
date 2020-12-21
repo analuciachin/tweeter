@@ -8,33 +8,6 @@
 $(document).ready(function() {
   // --- our code goes here ---
 
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd" 
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
-
-
   const loadTweets = function () {
     console.log('loadTweets func');
     const url = `http://localhost:8080/tweets`;
@@ -151,6 +124,19 @@ $(document).ready(function() {
     $('#error-msg').children('span').text('');
     $('#error-msg').children('span').removeClass('fas fa-exclamation-triangle');
   }); 
+
+
+  // $('.nav-new-tweet').children('button').on('click', function () {
+  //   $('.new-tweet').css('visibility', 'hidden');
+  // }, function () {
+  //   $('.new-tweet').css('visibility', 'visible');
+  // });
+
+  $('.nav-new-tweet').children('button').on('click', function () {
+    //$('.new-tweet').toggle();
+    $('.new-tweet').toggleClass('hidden');
+    return false;
+  });
 
 
 });
