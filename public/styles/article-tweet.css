@@ -1,5 +1,5 @@
 article.tweet {
-  width: 1000px;
+  width: 100%;
   margin: 50px auto 0 auto;
   border: 2px solid;
   height: 250px;
@@ -46,7 +46,7 @@ article.tweet p:after {
   content: "";
   border-bottom: 2px solid #545149;
   height: 2px;
-  width: 920px;
+  width: 95%;
   display: block;
   padding: 10px;
 }
@@ -89,4 +89,3 @@ article.tweet:hover {
 article.tweet:hover .hide {
   opacity: 1;
 }
-

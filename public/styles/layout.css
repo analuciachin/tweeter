@@ -26,6 +26,7 @@ body {
  */
 
  .container {
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,5 +35,14 @@ body {
 
  .flex-item {
     /* text-align: center; */
-    width: 90%;
+    width: 100%;
  }
+
+
+
+
+@media only screen and (max-width: 990px) {
+  .container {
+    margin-top: 50px;
+  }
+}

@@ -46,36 +46,42 @@
       </div>
     </nav>
 
-    <header class='main-header'>
-      <div>
-          <img src="/images/profile-hex.png"> 
+    <div class='row'>
+      <div class='col-lg-5'>
+        <header class='main-header'>
+          <div>
+              <img src="/images/profile-hex.png"> 
+          </div>
+          <br>
+          <div>
+              <p><strong>Amy</strong> Mansell</p>
+          </div>
+        </header>
       </div>
-      <br>
-      <div>
-          <p><strong>Amy</strong> Mansell</p>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <div class="flex-item">
-        <section class="new-tweet">
-          <h2>Compose Tweet</h2>
-          <div id="error-msg"></div>
-          <form id="form-new-tweet" action="/tweets" method="post">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text"></textarea>
-            <div>
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
-        </section>
-      </div>
-
-      <div class="flex-item">
-
-        <div id="tweets-container"></div>
       
-    </main>
+      <div class='col-lg-7'>
+        <!-- Page-specific (main) content here -->
+        <main class="container">
+          <div class="flex-item">
+            <section class="new-tweet">
+              <h2>Compose Tweet</h2>
+              <div id="error-msg"></div>
+              <form id="form-new-tweet" action="/tweets" method="post">
+                <label for="tweet-text">What are you humming about?</label>
+                <textarea name="text" id="tweet-text"></textarea>
+                <div>
+                  <button type="submit">Tweet</button>
+                  <output name="counter" class="counter" for="tweet-text">140</output>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <div class="flex-item">
+            <div id="tweets-container"></div>
+          </div>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
