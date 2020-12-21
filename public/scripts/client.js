@@ -28,8 +28,6 @@ $(document).ready(function() {
       })
   }
 
-  //loadTweets();
-
   const renderTweets = function (tweets) {
     for(const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
@@ -45,9 +43,9 @@ $(document).ready(function() {
     // Hours part from the timestamp
     const hours = date.getHours();
     // Minutes part from the timestamp
-    const minutes = '0' + date.getMinutes();
+    const minutes = date.getMinutes();
     // Seconds part from the timestamp
-    const seconds = '0' + date.getSeconds();
+    const seconds = date.getSeconds();
 
 
     if (hours) {
@@ -59,6 +57,8 @@ $(document).ready(function() {
     }
   }
 
+
+  // create the html tweet element
   const createTweetElement = function (tweetObj) {
     const $article = $('<article>').addClass('tweet');
     const $header = $('<header>').appendTo($article);
@@ -84,13 +84,15 @@ $(document).ready(function() {
 
   $('#form-new-tweet').on('submit', function(event) {
     
+    // don't send the form if there is a error
     if ($('#error-msg').children('span').text()) {
       event.preventDefault();
+    // show empty tweet error msg
     } else if (!$('#tweet-text').val()) {
       event.preventDefault();
       const error = 'Empty tweet'
       $('<span>').addClass('fas fa-exclamation-triangle').text(error).appendTo($('#error-msg'));
-      
+    // show text is over 140 characters error msg  
     } else if ($(this).children('div').find('output').text() < 0) {
       event.preventDefault();
       const error1 = 'You reached the maximum numbers of characters';
@@ -119,22 +121,15 @@ $(document).ready(function() {
     }
   });
 
+  // remove error msg once the user starts editing the textarea
   $("#tweet-text").on('input', function() {
-    //console.log($('.fa-exclamation-triangle').text(''));
     console.log($('#error-msg').children('span').text())
     $('#error-msg').children('span').text('');
     $('#error-msg').children('span').removeClass('fas fa-exclamation-triangle');
   }); 
 
-
-  // $('.nav-new-tweet').children('button').on('click', function () {
-  //   $('.new-tweet').css('visibility', 'hidden');
-  // }, function () {
-  //   $('.new-tweet').css('visibility', 'visible');
-  // });
-
+  //toggle the compose tweet section on a navbar button click
   $('.nav-new-tweet').children('button').on('click', function () {
-    //$('.new-tweet').toggle();
     $('.new-tweet').toggleClass('hidden');
     return false;
   });

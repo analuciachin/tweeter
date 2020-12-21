@@ -72,6 +72,8 @@
           <div class="flex-item">
             <section class="new-tweet">
               <h2>Compose Tweet</h2>
+
+              <!-- if there is an error msg, it will be shown in the div below -->
               <div id="error-msg"></div>
               <form id="form-new-tweet" action="/tweets" method="post">
                 <label for="tweet-text">What are you humming about?</label>
@@ -85,6 +87,8 @@
           </div>
 
           <div class="flex-item">
+
+            <!-- container for the tweets -->
             <div id="tweets-container"></div>
           </div>
         </main>
