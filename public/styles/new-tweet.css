@@ -46,11 +46,11 @@
 #error-msg {
   color: #b30000;
   display: inline-block;
-  align-content: flex-start;
 }
 
 #error-msg span {
-  margin: 50px;
+  margin-left: 250px;
+  margin-bottom: 30px;
 }
 
 .fa-exclamation-triangle:before {
