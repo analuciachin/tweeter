@@ -73,9 +73,9 @@ $(document).ready(function() {
     const tweetTime = convertTime(tweetObj.created_at);
     $('<span>').text(tweetTime).appendTo($footer);
     const $ul = $('<ul>').appendTo($footer);
-    $('<li>').addClass('fas fa-flag').appendTo($ul);
-    $('<li>').addClass('fas fa-retweet').appendTo($ul);
-    $('<li>').addClass('fas fa-heart').appendTo($ul);
+    $('<li>').addClass('fas fa-flag hide').appendTo($ul);
+    $('<li>').addClass('fas fa-retweet hide').appendTo($ul);
+    $('<li>').addClass('fas fa-heart hide').appendTo($ul);
 
     return $article;
   }
