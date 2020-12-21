@@ -25,7 +25,6 @@ article.tweet header span label {
 }
 
 article.tweet header span:last-of-type {
-  /* display: none; */
   margin-top: 15px;
 }
 

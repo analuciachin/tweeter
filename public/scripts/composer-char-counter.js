@@ -1,10 +1,10 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  console.log('Here');
+
+  // count tweet text characters and change color to red if the limit is reached
   $('#tweet-text').on('input', function() {
     const maxLength = 140;
     const currentLength = $(this).val().length;
-    //console.log(currentLength);
     const textLength = maxLength - currentLength;
     
     if (textLength < 0) {
