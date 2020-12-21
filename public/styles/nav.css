@@ -25,6 +25,7 @@ span {
 
 .wrapper button {
   border: none;
+  outline: none;
   background-color: #ff9933;
   color: #fff;
   cursor: pointer;

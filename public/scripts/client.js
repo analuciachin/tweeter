@@ -45,9 +45,10 @@ $(document).ready(function() {
     // Hours part from the timestamp
     const hours = date.getHours();
     // Minutes part from the timestamp
-    const minutes = date.getMinutes();
+    const minutes = '0' + date.getMinutes();
     // Seconds part from the timestamp
-    const seconds = date.getSeconds();
+    const seconds = '0' + date.getSeconds();
+
 
     if (hours) {
       return hours + ' hours';
