@@ -11,13 +11,13 @@ Tweeter is a project from the Web development bootcamp curriculum at Lighthouse 
 
 ## Screenshots
 
-!["Screenshot of the desktop view"](https://github.com/analuciachin/tweeter/tree/master/docs/desktop-view.png)
+!["Screenshot of the desktop view"](https://github.com/analuciachin/tweeter/blob/master/docs/desktop-view.png)
 
-!["Screenshot of the tablet/mobile view"](https://github.com/analuciachin/tweeter/tree/master/docs/tablet-mobile-view.png)
+!["Screenshot of the tablet/mobile view"](https://github.com/analuciachin/tweeter/blob/master/docs/tablet-mobile-view.png)
 
-!["Screenshot of the tweets section"](https://github.com/analuciachin/tweeter/tree/master/docs/tweets.png)
+!["Screenshot of the tweets section"](https://github.com/analuciachin/tweeter/blob/master/docs/tweets.png)
 
-!["Screenshot of the compose tweet section"](https://github.com/analuciachin/tweeter/tree/master/docs/compose-tweet.png)
+!["Screenshot of the compose tweet section"](https://github.com/analuciachin/tweeter/blob/master/docs/compose-tweet.png)
 
 ## Dependencies
 
