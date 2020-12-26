@@ -9,7 +9,6 @@ $(document).ready(function() {
   // --- our code goes here ---
 
   const loadTweets = function () {
-    //console.log('loadTweets func');
     const url = `http://localhost:8080/tweets`;
 
     $.ajax({
@@ -17,7 +16,6 @@ $(document).ready(function() {
       method: 'GET'
     })
       .done(function (data) {
-        //console.log('loadTweets function', data);
         renderTweets(data);
       })
       .fail(function () {
@@ -40,7 +38,6 @@ $(document).ready(function() {
   // https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
   // https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
   const convertTime = function (unix_timestamp) {
-
     const date = new Date(unix_timestamp);
     const today = new Date();
     const diffTime = Math.abs(today - date); // in milliseconds
@@ -70,7 +67,7 @@ $(document).ready(function() {
     $('<img>').attr('src', tweetObj.user.avatars)
               .attr('alt', tweetObj.user.name)
               .appendTo($firstSpan);
-    const $label = $('<label>').text(tweetObj.user.name).appendTo($firstSpan);
+    //const $label = $('<label>').text(tweetObj.user.name).appendTo($firstSpan);
     $('<span>').addClass('hide').text(tweetObj.user.handle).appendTo($header);
 
     $('<p>').text(tweetObj.content.text).appendTo($article);
@@ -88,20 +85,19 @@ $(document).ready(function() {
 
   $('#form-new-tweet').on('submit', function(event) {
     
-    // don't send the form if there is a error
+    // don't send the form if there is an error
     if ($('#error-msg').children('span').text()) {
       event.preventDefault();
-      $('#error-msg').empty();
     // show empty tweet error msg
     } else if (!$('#tweet-text').val()) {
       event.preventDefault();
-      $('#error-msg').children('span').empty();
+      $('#error-msg').empty();
       const error = 'Empty tweet'
       $('<span>').addClass('fas fa-exclamation-triangle fade-in').text(error).appendTo($('#error-msg'));
     // show text is over 140 characters error msg  
     } else if ($(this).children('div').find('output').text() < 0) {
       event.preventDefault();
-      $('#error-msg').children('span').empty();
+      $('#error-msg').empty();
       const error1 = 'You reached the maximum numbers of characters';
       $('<span>').addClass('fas fa-exclamation-triangle fade-in').text(error1).appendTo($('#error-msg'));
 
@@ -131,10 +127,7 @@ $(document).ready(function() {
 
   // remove error msg once the user starts editing the textarea
   $("#tweet-text").on('input', function() {
-    //console.log($('#error-msg').children('span').text())
-    //$('#error-msg').children('span').text('');
-    $('#error-msg').children('span').empty();
-    $('#error-msg').children('span').removeClass('fas fa-exclamation-triangle');
+    $('#error-msg').empty();
   }); 
 
   //toggle the compose tweet section on a navbar button click
