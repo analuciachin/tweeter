@@ -28,6 +28,8 @@ $(document).ready(function() {
       })
   }
 
+  loadTweets();
+
   const renderTweets = function (tweets) {
     for(const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
@@ -108,7 +110,8 @@ $(document).ready(function() {
         data: $(this).serialize(),
       })
       .done(function () {
-        loadTweets();
+        $('#tweets-container').empty();
+        loadTweets(); 
         $('#tweet-text').val('');
         $('.counter').html(140);
       })
