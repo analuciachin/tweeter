@@ -67,7 +67,6 @@ $(document).ready(function() {
     $('<img>').attr('src', tweetObj.user.avatars)
               .attr('alt', tweetObj.user.name)
               .appendTo($firstSpan);
-    //const $label = $('<label>').text(tweetObj.user.name).appendTo($firstSpan);
     $('<span>').addClass('hide').text(tweetObj.user.handle).appendTo($header);
 
     $('<p>').text(tweetObj.content.text).appendTo($article);
