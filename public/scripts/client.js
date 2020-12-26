@@ -37,25 +37,27 @@ $(document).ready(function() {
     }    
   }
 
-  // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+  // https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
+  // https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
   const convertTime = function (unix_timestamp) {
-    // Create a new JavaScript Date object based on the timestamp
-    // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-    const date = new Date(unix_timestamp * 1000);
-    // Hours part from the timestamp
-    const hours = date.getHours();
-    // Minutes part from the timestamp
-    const minutes = date.getMinutes();
-    // Seconds part from the timestamp
-    const seconds = date.getSeconds();
 
-
-    if (hours) {
+    const date = new Date(unix_timestamp);
+    const today = new Date();
+    const diffTime = Math.abs(today - date); // in milliseconds
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // in days 
+    const minutes = Math.floor(diffTime / 60000);
+    
+    if (diffDays === 1 && minutes >= 60) {
+      const hours = Math.floor(minutes / 60);
       return hours + ' hours';
-    } else if (minutes) {
-      return minutes + ' minutes';
-    } else if (seconds) {
+    } else if (diffDays === 1 && minutes < 1) {
+      const seconds = Math.floor(diffTime / 1000);
+      console.log('seconds ', seconds);
       return seconds + ' seconds';
+    } else if (diffDays === 1 && minutes < 60) {
+      return minutes + ' minutes';
+    } else {
+      return diffDays + ' days ago';
     }
   }
 
